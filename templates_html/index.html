@@ -1,13 +1,16 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
  <head>
+    <link href = "{% static 'index.css' %}" rel="stylesheet">
     <title>Word Counter App</title>
  </head>  
  <body>
   <h1>Input Your Text Below:</h1>  
-  <form action="counter">
+  <form method = "post" action="counter">
+   {% csrf_token %}
    <textarea name = "text" rows="50" cols="50"></textarea> <br>
-   <input type="submit" style="margin-top: 25px; width: 100px; height: 50px;"> 
+   <input type="submit"> 
   </form>    
  </body> 
 </html>

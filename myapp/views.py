@@ -9,6 +9,7 @@ def index(request):
 
 
 def countword(request):
-    words = request.GET['text']
+    # words = request.GET['text']
+    words = request.POST['text']
     Count = len(words.split())  # split words by space
     return render(request, 'counter.html', {'count': Count, 'text': words})
